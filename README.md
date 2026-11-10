@@ -125,7 +125,7 @@ lcc-playable reads `.lcc2` scenes, with or without a collision mesh (`.ply`). Sc
 
 `npm run build` puts the LCC Web SDK, three.js, Rapier and the characters into the build and writes their licenses to `THIRD_PARTY_NOTICES.txt` next to the game. You may publish the build with the SDK in it. Without an XGRIDS appKey the SDK draws a small XGRIDS watermark in the bottom-right corner on deployed sites (not on localhost); everything else works the same.
 
-The LCC2 White Paper license asks every product that uses the format to show "Data Organization Format originated from XGRIDS". Games show this line, linked to the white paper, on the loading screen and on every card; keep it. The build's `THIRD_PARTY_NOTICES.txt` carries the rest of the required notices (XGRIDS owns the format; it may not be used to train AI models that compete with XGRIDS). If you modify `.lcc2` files and pass them on, state that they were modified.
+The LCC2 White Paper license asks every product that uses the format to show "Data Organization Format originated from XGRIDS". Games show this line, linked to the white paper, on the loading screen; keep it. The build's `THIRD_PARTY_NOTICES.txt` carries the rest of the required notices (XGRIDS owns the format; it may not be used to train AI models that compete with XGRIDS). If you modify `.lcc2` files and pass them on, state that they were modified.
 
 ## License
 

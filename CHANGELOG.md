@@ -2,6 +2,11 @@
 
 lcc-playable follows [semantic versioning](https://semver.org/). Before 1.0, minor versions (0.x) may change the API; the stable core is listed in `docs/api.md`.
 
+## 0.3.1 (2026-11-10)
+
+Changed
+- The LCC2 format attribution ("Data Organization Format originated from XGRIDS") is shown on the loading screen only, no longer repeated on the title, pause and end cards. `NOTICE`, the READMEs and `THIRD_PARTY_NOTICES.txt` keep the full notices.
+
 ## 0.3.0 (2026-11-10)
 
 Added

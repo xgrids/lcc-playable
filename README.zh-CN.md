@@ -106,7 +106,7 @@ npm run build -- games/my-game                           # 可部署的目录 di
 
 `npm run build` 会把 LCC Web SDK、three.js、Rapier 和角色打进包里，并在游戏目录下写一份 `THIRD_PARTY_NOTICES.txt` 列出它们的许可证。打包产物可以连同 SDK 一起发布。没有 XGRIDS appKey 时，部署到线上的页面右下角会有一个小的 XGRIDS 水印（localhost 上没有），其他功能不受影响。
 
-LCC2 白皮书的许可要求，使用该格式的产品要显示「Data Organization Format originated from XGRIDS」。游戏会在加载画面和每张卡片上显示这行字，并链接到白皮书，请保留。打包产物里的 `THIRD_PARTY_NOTICES.txt` 写有白皮书要求的其他声明（格式归 XGRIDS 所有；不得用于训练与 XGRIDS 竞争的 AI 模型）。如果修改了 `.lcc2` 文件并提供给他人，要注明已修改。
+LCC2 白皮书的许可要求，使用该格式的产品要显示「Data Organization Format originated from XGRIDS」。游戏会在加载画面上显示这行字，并链接到白皮书，请保留。打包产物里的 `THIRD_PARTY_NOTICES.txt` 写有白皮书要求的其他声明（格式归 XGRIDS 所有；不得用于训练与 XGRIDS 竞争的 AI 模型）。如果修改了 `.lcc2` 文件并提供给他人，要注明已修改。
 
 ## 许可证
 

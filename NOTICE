@@ -21,7 +21,7 @@ Organization Format. Without the prior written consent of XGRIDS, the Data Organ
 Format may not be used for training or fine-tuning any artificial intelligence model
 that competes, directly or indirectly, with XGRIDS products or services. Games built
 with lcc-playable show the line "Data Organization Format originated from XGRIDS" on
-the loading screen and on every card, and `npm run build` writes these notices to
+the loading screen, and `npm run build` writes these notices to
 THIRD_PARTY_NOTICES.txt.
 
 Bundled third-party assets (assets/characters/), CC0 1.0, compressed and trimmed

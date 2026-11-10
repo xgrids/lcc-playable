@@ -37,7 +37,7 @@ the samples): the `.lcc2` JSON, splats in `data/3dgs/*.sog`, collision meshes as
 lcc-playable reads the JSON, the PLY meshes and the `.sog` files itself, without the SDK. Use the white paper, and the
 other repositories at https://github.com/xgrids, when you need more than the SDK offers; the SDK is not planned to
 get editing calls. The white paper has its own license terms: games show "Data Organization Format originated from XGRIDS" on the
-loading screen and every card (`src/ui.js`), and the build writes the other notices to `THIRD_PARTY_NOTICES.txt`.
+loading screen (`src/ui.js`), and the build writes the other notices to `THIRD_PARTY_NOTICES.txt`.
 
 ## Upgrading
 

@@ -81,7 +81,7 @@ Geometry source in `'auto'` mode: `<scene>/prep/` if present (written by `npm ru
 - Touch controls appear on touch devices, or with `?touch`.
 
 ### p.ui
-The loading screen and every card show "Data Organization Format originated from XGRIDS" (required by the LCC2 White Paper license; not an option). `error(message, hint)` (full-screen error with Reload; shown for you on load and update errors) · `hud(text, slot = 'left' | 'right' | 'center')`, `toast(text, ms)` (one short line, 28 px; use your own panel for longer text), `crosshair(on)`, `title({...})`, `end({...})`, `card({title, subtitle, text, button})` → Promise.
+The loading screen shows "Data Organization Format originated from XGRIDS" (required by the LCC2 White Paper license; not an option). `error(message, hint)` (full-screen error with Reload; shown for you on load and update errors) · `hud(text, slot = 'left' | 'right' | 'center')`, `toast(text, ms)` (one short line, 28 px; use your own panel for longer text), `crosshair(on)`, `title({...})`, `end({...})`, `card({title, subtitle, text, button})` → Promise.
 
 ## SceneGeometry (`p.geo`)
 A 0.2 m grid computed from the scene's collision mesh, or, for scenes without one, estimated from the splats (`grid.source: 'splats'`, `p.estimated`; see below), using the capture trajectory as a hint when the scene has one (`info/poses.json` is optional). A capture pose counts as *walked* when its camera is 0.3–3.8 m above walkable ground; higher poses (chairlift, vehicle, drone) are ignored. Without walked poses, the ground is the lowest walkable layer and the main area is the largest connected one.

@@ -7,8 +7,8 @@
 //   p.ui.error(message, hint)                               full-screen error with a Reload button
 // createPlayable shows the title/end cards for you; call these directly only for custom flows.
 // Built-in texts come from createPlayable({ strings }) (see DEFAULT_STRINGS).
-// The loading screen and every card show the LCC2 format attribution (CREDIT). The LCC2 white paper license requires it
-// in every product that uses the format, so it is not a string option; do not remove it.
+// The loading screen shows the LCC2 format attribution (CREDIT). The LCC2 white paper license requires it in every
+// product that uses the format, so it is not a string option; do not remove it. Cards do not repeat it.
 
 const CSS = `
 .lp-ui{position:fixed;inset:0;pointer-events:none;font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;z-index:10}
@@ -80,7 +80,7 @@ export class UI {
       if (title) c.querySelector('h1').textContent = title;
       if (subtitle) c.querySelector('h2').textContent = subtitle;
       if (text) c.querySelector('p').textContent = text;
-      const b = c.querySelector('button'); b.textContent = button; c.firstChild.appendChild(credit());
+      const b = c.querySelector('button'); b.textContent = button;
       const go = () => { removeEventListener('keydown', key); c.remove(); ok(); };
       const key = (e) => { if ((e.code === 'Enter' || e.code === 'Space') && !e.repeat && performance.now() - t0 > 600) { e.preventDefault(); e.stopImmediatePropagation(); go(); } };
       b.addEventListener('click', go); addEventListener('keydown', key);
