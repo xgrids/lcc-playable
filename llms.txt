@@ -1,0 +1,35 @@
+# lcc-playable
+
+> A game development kit for XGRIDS LCC 3D Gaussian Splatting scenes (captured real places), built for coding agents. Runtime library on the LCC Web SDK and three.js, a CLI to inspect scenes, check and build games, and examples. Clone, open with your agent, ask for a game. Games are static web pages.
+
+Start with AGENTS.md: workflow, rules, and the scene CLI. Coordinates are Z up, meters.
+
+## Docs
+- [AGENTS.md](AGENTS.md): workflow for agents, rules for good-looking games, checks
+- [docs/api.md](docs/api.md): API reference (createPlayable, SceneGeometry and routes, characters, Walker/Flyer/Navigator, cameras, props: placeAlong/collectibles/beacon/label, minimap, patrol NPCs, best score, dispose, roads, physics, input, UI, URL parameters)
+- [docs/game-types.md](docs/game-types.md): explore, runner, FPS, flight, guided tour, delivery, hide and seek, ski/downhill, racing, physics puzzles
+- [docs/performance.md](docs/performance.md): measured fps and memory, quality/cache knobs, what costs frames
+- [docs/get-scenes.md](docs/get-scenes.md): getting a scene (own export or XGRIDS sample) and importing it
+- [docs/scene-data.md](docs/scene-data.md): what a playable scene needs; `scene info` checks it
+- [docs/lcc-sdk.md](docs/lcc-sdk.md): LCC Web SDK version (0.6.4, official closed-source release) and upgrading
+- [src/index.d.ts](src/index.d.ts), [src/kit/index.d.ts](src/kit/index.d.ts): type declarations (core `lcc-playable`, gameplay helpers `lcc-playable/kit`)
+- [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Examples (one main.js each)
+- [examples/explore/main.js](examples/explore/main.js): walk and collect coins along the capture route
+- [examples/runner/main.js](examples/runner/main.js): lane runner on a road through the whole scene
+- [examples/fps/main.js](examples/fps/main.js): first-person cartoon blaster vs robot waves, Rapier crates
+- [examples/flight/main.js](examples/flight/main.js): toon plane through rings over the scene
+
+## Commands
+- `npm run setup`: download the LCC Web SDK and headless Chromium
+- `npm run scene -- <list|add|info|route|regions|at|path|plot|shot|coverage|prep> ...`: inspect scenes (JSON)
+- `npm run new -- <id> --from <example> --scene <name>`: new game in games/<id>
+- `npm run check -- games/<id> [--auto]`: headless check, screenshots, autopilot round
+- `npm run dev`: preview server on :8091
+- `npm run build -- games/<id>`: deployable static folder in dist/<id>
+- `npm test`, `npm run lint`: unit tests and syntax checks (no GPU)
+
+## Data
+Scenes are `.lcc2` folders. A collision mesh (`collision.ply`) and capture trajectory (`info/poses.json`) are used when present; without them, ground and walkability are estimated from the splats and routes tour the open areas.
+Use the developer's own scenes, or XGRIDS sample scenes (https://developer.xgrids.com/#/download?page=sampledata), which need a login, are for testing only, and are not licensed for commercial use.

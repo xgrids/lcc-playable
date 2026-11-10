@@ -1,0 +1,28 @@
+{
+ "_note": "Rigged, animated characters (CC0). loadCharacter(id) reads this file. roles maps game action names to animation clips in the file. Both files are compressed with EXT_meshopt_compression and trimmed to the clips listed here.",
+ "characters": {
+  "human": {
+   "file": "human.glb",
+   "look": "Realistic proportions, casual clothes. Default player character for real-world scenes.",
+   "license": "CC0 1.0, Quaternius (LICENSE-Quaternius*.txt)",
+   "roles": {
+    "idle": "Idle_Loop", "walk": "Walk_Loop", "run": "Jog_Fwd_Loop", "sprint": "Sprint_Loop",
+    "jumpStart": "Jump_Start", "jumpAir": "Jump_Loop", "jumpLand": "Jump_Land", "jump": "Jump_Loop",
+    "roll": "Roll", "crouch": "Crouch_Idle_Loop", "crouchWalk": "Crouch_Fwd_Loop", "slide": "Crouch_Idle_Loop",
+    "hit": "Hit_Chest", "death": "Death01", "cheer": "Dance_Loop", "dance": "Dance_Loop", "punch": "Punch_Jab",
+    "aim": "Pistol_Aim_Neutral", "shoot": "Pistol_Shoot", "reload": "Pistol_Reload", "sit": "Sitting_Idle_Loop",
+    "interact": "Interact", "swim": "Swim_Fwd_Loop"
+   }
+  },
+  "robot": {
+   "file": "robot.glb",
+   "look": "Cartoon robot. Good for enemies, NPCs, sci-fi or light-hearted games, and crowds (0.2 MB).",
+   "license": "CC0 1.0, Quaternius / three.js examples (LICENSE-Robot.txt)",
+   "roles": {
+    "idle": "Idle", "walk": "Walking", "run": "Running", "jump": "Jump", "jumpAir": "Jump", "death": "Death",
+    "hit": "No", "cheer": "Dance", "dance": "Dance", "wave": "Wave", "punch": "Punch", "sit": "Sitting",
+    "yes": "Yes", "no": "No", "thumbsUp": "ThumbsUp"
+   }
+  }
+ }
+}

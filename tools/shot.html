@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>lcc-playable shot</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">
+{ "imports": { "three": "/node_modules/three/build/three.module.js", "@xgrids/lcc-sdk-three": "/vendor/lcc-web-sdk/lcc-sdk-three.js" } }
+</script>
+</head>
+<body>
+<script type="module">
+// Opened by `npm run scene -- shot`. ?data=<.lcc2 URL>&w=&h=  Exposes window.shot.
+import * as THREE from 'three';
+import { LCCRender } from '@xgrids/lcc-sdk-three';
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1280, H = +q.get('h') || 720;
+const renderer = new THREE.WebGLRenderer({ antialias: false, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, W / H, 0.05, 2000); camera.up.set(0, 0, 1); camera.position.set(0, 0, 30); camera.lookAt(0, 0, 0);
+const S = (window.shot = { ready: false, error: null });
+const lcc = LCCRender.load({ camera, scene, renderer, renderLib: THREE, canvas: renderer.domElement, dataPath: q.get('data'), useEnv: true, useIndexDB: false, loadingEffect: false, appKey: null },
+  () => { S.ready = true; }, () => {}, () => { S.error = 'load failed'; });
+lcc.setMaxSplats(6000000); lcc.setLodAutoLevelUp(true);
+S.setView = (pos, target, fov = 60) => { camera.fov = fov; camera.position.set(...pos); camera.lookAt(...target); camera.updateProjectionMatrix(); };
+S.waitStable = async (timeout = 20000) => {
+  const t0 = performance.now(); let ok = 0;
+  while (performance.now() - t0 < timeout) {
+    await new Promise((r) => requestAnimationFrame(r));
+    ok = (lcc.checkFrameStable ? lcc.checkFrameStable() : true) ? ok + 1 : 0;
+    if (ok >= 10) return { stable: true, ms: Math.round(performance.now() - t0) };
+  }
+  return { stable: false, ms: timeout };
+};
+S.gl = () => { const g = renderer.getContext(), e = g.getExtension('WEBGL_debug_renderer_info'); return e ? g.getParameter(e.UNMASKED_RENDERER_WEBGL) : '?'; };
+renderer.setAnimationLoop(() => { LCCRender.update(); renderer.render(scene, camera); });
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Unit tests and syntax checks (no GPU). The GPU checks (npm run check -- ... --auto) are a manual
+# pre-release step, see CONTRIBUTING.md.
+.node: &node
+  stage: test
+  cache: { key: npm, paths: [.npm/] }
+  before_script: [npm ci --cache .npm --prefer-offline]
+  script: [npm run lint, npm run typecheck, npm test]
+test:node20: { <<: *node, image: "node:20" }
+test:node22: { <<: *node, image: "node:22" }

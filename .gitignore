@@ -1,0 +1,11 @@
+node_modules/
+# LCC Web SDK, downloaded by `npm run setup`
+vendor/
+# Imported scenes (large; XGRIDS sample data must not be redistributed)
+scenes/*
+!scenes/README.md
+# Build output
+dist/
+# Geometry cache for remote scenes used by the CLI
+.cache/
+.DS_Store

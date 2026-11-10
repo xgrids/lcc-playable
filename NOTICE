@@ -1,0 +1,35 @@
+lcc-playable
+Copyright 2026 XGRIDS
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+NOT included in this repository and NOT covered by the Apache-2.0 license:
+- LCC Web SDK. `npm run setup` downloads it from the XGRIDS website. It is
+  subject to the XGRIDS terms. `npm run build` copies it into the build output.
+- XGRIDS sample scene data (https://developer.xgrids.com/#/download?page=sampledata).
+  Downloading requires a login. It may be used for testing and evaluation only and
+  is not licensed for commercial use.
+- XGRIDS trademarks.
+
+LCC2 Data Organization Format:
+Data Organization Format originated from XGRIDS. lcc-playable reads scene data in the
+LCC2 Data Organization Format (the .lcc2 file, its .sog splat files and PLY meshes) and
+uses it under authorization from XGRIDS pursuant to the LCC2 White Paper
+(https://github.com/xgrids/LCC2Whitepaper), whose terms apply to the format. XGRIDS and
+its affiliates own and retain all intellectual property and other rights in the Data
+Organization Format. Without the prior written consent of XGRIDS, the Data Organization
+Format may not be used for training or fine-tuning any artificial intelligence model
+that competes, directly or indirectly, with XGRIDS products or services. Games built
+with lcc-playable show the line "Data Organization Format originated from XGRIDS" on
+the loading screen and on every card, and `npm run build` writes these notices to
+THIRD_PARTY_NOTICES.txt.
+
+Bundled third-party assets (assets/characters/), CC0 1.0, compressed and trimmed
+to a subset of animations:
+- human.glb: Quaternius Universal Base Characters, Modular Character Outfits -
+  Fantasy, Universal Animation Library (https://quaternius.com)
+- robot.glb: RobotExpressive by Tomás Laulhé (Quaternius), modified by Don McCurdy,
+  from the three.js examples
+
+Third-party npm dependencies keep their own licenses: three.js (MIT),
+@dimforge/rapier3d-compat (Apache-2.0).

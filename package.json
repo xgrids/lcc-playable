@@ -1,0 +1,62 @@
+{
+  "name": "lcc-playable",
+  "version": "0.3.0",
+  "description": "Game development kit for XGRIDS LCC 3D Gaussian Splatting scenes, built for coding agents: turn a captured real place into a browser game.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgrids/lcc-playable.git"
+  },
+  "homepage": "https://github.com/xgrids/lcc-playable#readme",
+  "bugs": {
+    "url": "https://github.com/xgrids/lcc-playable/issues"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node tools/setup.mjs",
+    "dev": "node tools/dev.mjs",
+    "new": "node tools/new.mjs",
+    "scene": "node tools/scene.mjs",
+    "check": "node tools/check.mjs",
+    "build": "node tools/build.mjs",
+    "test": "node --test test/serve.test.mjs test/geometry.test.mjs test/tools.test.mjs test/unzip.test.mjs test/splats.test.mjs",
+    "lint": "node tools/lint.mjs",
+    "typecheck": "tsc -p test/types"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.58.2",
+    "typescript": "7.0.2"
+  },
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./kit": {
+      "types": "./src/kit/index.d.ts",
+      "default": "./src/kit/index.js"
+    }
+  },
+  "keywords": [
+    "3dgs",
+    "gaussian-splatting",
+    "lcc",
+    "xgrids",
+    "three.js",
+    "game",
+    "webgl",
+    "ai-agents"
+  ],
+  "author": "XGRIDS"
+}
